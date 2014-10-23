@@ -1,0 +1,27 @@
+div class="site-main" id="main">
+    <div class="content-area" id="primary"> 
+        <div class="page-header">
+            <h1 class="page-title"><%= @job.title %></h1>
+            <%= link_to "Edit", edit_job_path(@job) %>
+            <%= link_to "Delete", job_path(@job), method: :delete, data:{ confirm: "Are you sure"} %>
+            <h2 class="page-subtitle">
+                <ul>
+                    <li class="job-type full-time">Full Time</li>
+                    <li class="job-company"><%=@job.company %></li>
+                    <li class="job-location"><i class="icon-location"></i> <%= @job.location%></li>
+                    <li class="job-date-posted"><i class="icon-calendar"></i> Posted <%= time_ago_in_words(@job.created_at) %> ago</li>
+                </ul>
+            </h2>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="container pull-left" >
+        
+    </div> 
+    
+    <%=@job.body %>
+   
+
+</div>

@@ -1,0 +1,98 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+/****BODY BACKGROUND COLOR****/
+body {
+    background-color: #324065;
+} 
+
+.item-img {
+    border-bottom: 3px solid #26B77E;
+    height: 300px;
+}
+
+.thumbnail:hover {
+	border-color: #38FEB1
+}
+
+
+a.item-img {
+    display: block;
+    background-size: cover;
+}
+
+
+/*****INDEX PAGE*****/
+.intro-header {
+	padding-top: 20em
+}
+
+/*COntent on index page*/
+.caption {
+	
+	display:block;
+    width:200px;
+    white-space: nowrap;
+    overflow:hidden;
+    text-overflow: ellipsis;
+}
+
+/****NEW JOB POST*****/
+.container{
+	padding-top: 15em;
+}
+
+
+/*****SHOW PAGE HEADER *****/
+.page-header {
+    background: none repeat scroll 0 0 #fafafa;
+    border-bottom: 1px solid #ccc;
+    font: 38px "Varela Round",sans-serif;
+    padding: 20px 0;
+    text-align: center;
+}
+.page-title {
+    color: #797979;
+    font-size: 26px;
+    font-weight: normal;
+    padding-bottom: 20px;
+}
+.page-subtitle {
+    color: #9a9b9e;
+    font: 14px "Montserrat",sans-serif;
+    margin-top: -15px;
+}
+.page-subtitle ul {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+.page-subtitle li.job-type {
+    border-right: 0 none;
+    display: inline-block;
+    padding: 3px 10px;
+    text-align: center;
+}
+.page-subtitle li {
+    border-right: 1px solid #ccc;
+    display: inline-block;
+    padding: 0 20px 0 10px;
+}
+.page-subtitle li:last-child {
+    border-right: 0 none;
+}

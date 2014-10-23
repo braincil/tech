@@ -1,0 +1,51 @@
+  <!-- Page Header-->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background: url('bg.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1></h1>
+                        
+                        <span class="subheading"></span>
+
+                    </div>
+                   <h1><%= link_to "Add a job", new_job_path %></h1>
+            </div>
+        </div>
+  
+    </header>
+
+<!-- Projects  -->
+<div class="container" >
+    <div class="row">
+        <!-- Post Feautured Job First -->
+        <!-- POst the new jobs first after the featured -->
+        <% @jobs.order('sticky DESC, created_at DESC').each do |job| %> 
+      <ul class="thumbnails list-unstyled">
+        <li class="col-sm-4 col-lg-3">
+          <div class="thumbnail">
+            <div style="padding: 4px" class='center'>
+              <a class="item-img pos-relative" href="job_path(@job)"><%= image_tag job.image.url(:medium) %></a>
+              
+            </div>
+            <div class="caption">
+              <h2> <%= link_to job.title, job_path(job) %>  </h2>
+              <p style="max-height: 200px;">
+                <%=job.body%>   
+              </p>
+            </div>
+            <div class="modal-footer" style="text-align: left">
+              <div class="row">
+                <div class="col-md-6"><b>Location</b><br/><small>Location</small></div>
+                  <div class="col-md-6"><b class="pull-right"><%= time_ago_in_words(job.created_at)%></b><br/></div>
+                </div>
+            </div>
+          </div>
+        </li>
+    </ul>
+    <%end%>
+    <center><%= paginate @jobs %></center>
+  </div>
+
+</div>
