@@ -1,22 +1,22 @@
   <!-- Page Header-->
     <!-- Set your background image for this header on the line below. -->
     <header class="intro-header" style="background: url('bg.jpg')">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                   
-                   <%= form_tag jobs_path, method: :get, class:"navbar-from navbar-center", role:"search" do %>
-                    <p>
-                      <%= text_field_tag :search, params[:search], class:"form-control", placeholder: "Search Articles"%>
-                      <%= submit_tag "Search", name: nil, class: "btn btn-primary" %>
-                    </p>
-                     <% end %>   
-                                            
+          <div class="container">
+                <div class="main-search clearfix">
+                   <div class="form-group">
+                       <%= form_tag jobs_path, method: :get, class:"navbar-from navbar-center", role:"search" do %>
                         
+                        <%= text_field_tag :search, params[:search], class:"form-control", placeholder: "Enter a job title, a location, etc."%>
                     </div>
-                   <h1><%= link_to "Add a job", new_job_path %></h1>
+                    <!--- end of form-group class-->
+                      
+                    <% end %>     
+                </div>
+                <!--end of main search form -->
+                
+                <h1><%= link_to "Add a job", new_job_path %></h1>
             </div>
-        </div>
+        <!-- end of container -->
   
     </header>
 

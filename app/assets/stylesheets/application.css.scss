@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
@@ -42,7 +43,7 @@ body {
 
 /*****INDEX PAGE*****/
 .intro-header {
-	padding-top: 20em
+	padding-top: 5em
 }
 
 
@@ -103,10 +104,6 @@ body {
     text-align: center;
     text-transform: uppercase;
 }
-
-
-
-
 
 
 
@@ -192,4 +189,24 @@ a, a:hover {
 .item:hover{
     border-color: #38FEB1
 }
+
+
+#search {
+    background-color: rgba(245, 245, 245, 0.4);
+     font-family: "jaf-bernino-sans","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 45;
+    height: 60px;
+    letter-spacing: -0.02em;
+    padding: 0;
+    
+}
+
+.form-group {
+    float: center;
+    width: 90%;
+    padding-right: 10px;
+}
+
 
