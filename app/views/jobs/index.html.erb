@@ -4,11 +4,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="site-heading">
-                        <h1></h1>
+                   
+                   <%= form_tag jobs_path, method: :get, class:"navbar-from navbar-center", role:"search" do %>
+                    <p>
+                      <%= text_field_tag :search, params[:search], class:"form-control", placeholder: "Search Articles"%>
+                      <%= submit_tag "Search", name: nil, class: "btn btn-primary" %>
+                    </p>
+                     <% end %>   
+                                            
                         
-                        <span class="subheading"></span>
-
                     </div>
                    <h1><%= link_to "Add a job", new_job_path %></h1>
             </div>
@@ -16,36 +20,70 @@
   
     </header>
 
-<!-- Projects  -->
-<div class="container" >
-    <div class="row">
-        <!-- Post Feautured Job First -->
-        <!-- POst the new jobs first after the featured -->
-        <% @jobs.order('sticky DESC, created_at DESC').each do |job| %> 
-      <ul class="thumbnails list-unstyled">
-        <li class="col-sm-4 col-lg-3">
-          <div class="thumbnail">
-            <div style="padding: 4px" class='center'>
-              <a class="item-img pos-relative" href="job_path(@job)"><%= image_tag job.image.url(:medium) %></a>
-              
-            </div>
-            <div class="caption">
-              <h2> <%= link_to job.title, job_path(job) %>  </h2>
-              <p style="max-height: 200px;">
-                <%=job.body%>   
-              </p>
-            </div>
-            <div class="modal-footer" style="text-align: left">
-              <div class="row">
-                <div class="col-md-6"><b>Location</b><br/><small>Location</small></div>
-                  <div class="col-md-6"><b class="pull-right"><%= time_ago_in_words(job.created_at)%></b><br/></div>
-                </div>
-            </div>
-          </div>
-        </li>
-    </ul>
-    <%end%>
-    <center><%= paginate @jobs %></center>
-  </div>
 
-</div>
+<div class="container" style="responsive" >
+  <div class="row">
+    <!-- Post Feautured Job First -->
+    <!-- POst the new jobs first after the featured -->
+    <% @jobs.order('sticky DESC, created_at DESC').each do |job| %> 
+    <div class="col-sm-4 col-lg-3">
+      <article class="item tour">
+        <!-- if the post is featured show the riboon-->
+          <div>
+            <% if job.sticky? %>
+              <span class="ribbon" >Featured</span>
+            <%end%>
+          </div>
+          <!--end of featured post DIV-->
+          
+        <a class=" item-img pos-relative" style=""href="<%=job_path(job)%>">
+          <%= image_tag job.image.url(:medium) %>
+        </a>
+        <!-- end of a tag(contains the image) -->
+
+        <div class="item-content">
+          <h4>
+            <b>
+              <a href=""><%= link_to job.title, job_path(job) %></a>
+            </b>
+           
+            <!-- endof span class -->
+            <p>
+              <%=job.body%> 
+            </p>
+          </h4>
+        </div>
+        <!-- end of item-content class-->
+        <div class="item-price" style="background:#FFF">
+          <div class="pull-left text-left" >
+            Company
+          </div>
+          <!--end of pull left class-->
+          <div class="pull-right text-right">
+            <%=job.company%>
+          </div>
+          <!--end of pull right class-->
+        </div>
+        <!--end of item price class-->
+        <div class="item-footer">
+          <div class="row">
+            <div class="col-xs-6 text-left">
+               <b>Location</b><br/><small><%= job.location%></small>
+            </div>
+            <!-- end of the cols-xs-6-->
+            <div class="col-xs-6 text-right">
+              <b>Added</b><br/><small><%= time_ago_in_words(job.created_at)%></small>
+            </div>
+            <!-- end of the cols-xs-6-->
+          </div>
+          <!-- end of row class -->
+        </div>
+        <!-- end of item-footer class-->
+      </article>
+      <!--End of article tag-->
+    </div>
+    <!-- end of the col-sm-4 class-->
+    <%end%>
+  </div>
+  <!--End of row class-->
+</div>  

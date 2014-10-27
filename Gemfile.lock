@@ -69,6 +69,10 @@ GEM
       cocaine (~> 0.5.3)
       mime-types
     pg (0.17.1-x86-mingw32)
+    pg_search (0.7.8)
+      activerecord (>= 3.1)
+      activesupport (>= 3.1)
+      arel
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -136,6 +140,7 @@ DEPENDENCIES
   kaminari
   paperclip (~> 4.2)
   pg
+  pg_search (~> 0.7.8)
   rails (= 4.1.6)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)

@@ -16,24 +16,27 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+body, h1, h2, h3, h4,h5, h6 {
+    font-family: Glyphicons Halflings regular;
+    font-weight: normal;
+    text-rendering: auto;
+}
+
+.container {
+padding-top: 15em;
+
+}
+
 /****BODY BACKGROUND COLOR****/
+
 body {
-    background-color: #324065;
-} 
-
-.item-img {
-    border-bottom: 3px solid #26B77E;
-    height: 300px;
-}
-
-.thumbnail:hover {
-	border-color: #38FEB1
-}
-
-
-a.item-img {
-    display: block;
-    background-size: cover;
+    height: 100%;
+    background: -webkit-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+    background: -moz-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+    background: -ms-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+    background: -o-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+    background: linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+    font-family: 'Lato', sans-serif;
 }
 
 
@@ -42,20 +45,6 @@ a.item-img {
 	padding-top: 20em
 }
 
-/*COntent on index page*/
-.caption {
-	
-	display:block;
-    width:200px;
-    white-space: nowrap;
-    overflow:hidden;
-    text-overflow: ellipsis;
-}
-
-/****NEW JOB POST*****/
-.container{
-	padding-top: 15em;
-}
 
 
 /*****SHOW PAGE HEADER *****/
@@ -96,3 +85,111 @@ a.item-img {
 .page-subtitle li:last-child {
     border-right: 0 none;
 }
+
+.ribbon {
+    border-radius: 5px 0;
+    display: inline-block;
+    left: 17px;
+    position: absolute;
+    top: 2px;
+    z-index: 99;
+    background-color: #FF3600;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 16px;
+    padding: 5px 5px 5px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+
+
+
+
+
+/****JOB LISTING CSS****/
+.item {
+    border: 2px solid #c4c8c8;
+    margin-bottom: 20px;
+
+}
+
+.item.tour .item-img {
+    border-bottom: 3px solid #4091c8;
+    height: 170px;
+}
+.item.tour .item-img {
+    height: auto;
+
+}
+.item a.item-img {
+    display: block;
+}
+.item .item-img {
+    background-color: #ebebeb;
+    background-position: center center;
+    background-repeat: no-repeat;
+    
+}
+
+.item img{
+    max-width: 100%;
+}
+a, a:hover {
+    color: #00b1ff;
+}
+.item.tour .item-content {
+    height: 130px;
+    padding: 15px 0 5px 0;
+    text-align: center;
+}
+.tour .item-content {
+  
+   overflow: hidden ;
+}
+.item .item-content {
+    height: 100px;
+}
+.item .item-content{
+    background-color: #fff;
+    padding: 10px;
+}
+.item.tour .item-content h4 {
+    border-bottom: 1px solid #b9b9b9;
+    font-size: 17px;
+    height: 100px;
+    line-height: 20px;
+    margin-bottom: 10px;
+    margin-top: 15px;
+    padding-bottom: 15px !important;
+}
+.item h4 {
+    border-bottom: 0 none;
+    font-size: 14px;
+    
+}
+
+
+.item.tour .item-price {
+    background: none repeat scroll 0 0 #fff;
+    font-size: 14px;
+    height: 37px;
+    line-height: 16px;
+    padding: 10px;
+}
+
+.item.tour .item-footer {
+    background: none repeat scroll 0 0 #f6f6f6;
+    border-top: 1px solid #caced1;
+    font-size: 15px;
+    height: auto;
+    padding: 6px;
+}
+
+.item:hover{
+    border-color: #38FEB1
+}
+

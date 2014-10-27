@@ -1,7 +1,13 @@
 class JobsController < ApplicationController
+	
+
 	def index
-	   @jobs = Job.page(params[:page]).per(12)
-	end
+		if params[:search]
+			@jobs = Job.search(params[:search]).order("sticky DESC, created_at DESC")
+		else
+	   		@jobs = Job.page(params[:page]).per(12)
+		end
+	end	
 
 	def show
 		@job =Job.find(params[:id])
