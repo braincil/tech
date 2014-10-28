@@ -3,7 +3,7 @@ class JobsController < ApplicationController
 
 	def index
 		if params[:search]
-			@jobs = Job.search(params[:search]).order("sticky DESC, created_at DESC")
+			@jobs = Job.search(params[:search]).page(params[:page]).per(12)
 		else
 	   		@jobs = Job.page(params[:page]).per(12)
 		end
