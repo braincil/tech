@@ -54,70 +54,6 @@ body {
 }
 
 
-/*****SHOW PAGE HEADER *****/
-.job-head{
-    background-color: #fff;
-}
-.page-header {
-    background: none repeat scroll 0 0 #fafafa;
-    border-bottom: 1px solid #ccc;
-    font: 38px "Varela Round",sans-serif;
-    padding: 20px 0;
-    text-align: center;
-}
-.page-title {
-    color: #797979;
-    font-size: 26px;
-    font-weight: normal;
-    
-}
-
-
-.page-subtitle {
-    color: #9a9b9e;
-    font: 14px "Montserrat",sans-serif;
-    margin-top: 0;
-}
-.page-subtitle ul {
-    list-style: none outside none;
-    margin: 0;
-    padding: 0;
-}
-.page-subtitle li.job-type {
-    border-right: 0 none;
-    display: inline-block;
-    padding: 3px 10px;
-    text-align: center;
-}
-.page-subtitle li {
-    border-right: 1px solid #ccc;
-    display: inline-block;
-    padding: 0 20px 0 10px;
-}
-.page-subtitle li:last-child {
-    border-right: 0 none;
-}
-
-
-
-
-.ribbon {
-    border-radius: 5px 0;
-    display: inline-block;
-    left: 17px;
-    position: absolute;
-    top: 2px;
-    z-index: 99;
-    background-color: #FF3600;
-    border-radius: 5px;
-    color: #fff;
-    font-size: 12px;
-    font-weight: bold;
-    line-height: 16px;
-    padding: 5px 5px 5px;
-    text-align: center;
-    text-transform: uppercase;
-}
 
 
 
@@ -208,7 +144,27 @@ a, a:hover {
     border-color: #38FEB1
 }
 
+/******FEATURED RIBBON******/
 
+.ribbon {
+    border-radius: 5px 0;
+    display: inline-block;
+    left: 17px;
+    position: absolute;
+    top: 2px;
+    z-index: 99;
+    background-color: #FF3600;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 16px;
+    padding: 5px 5px 5px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/**********SEARCH BAR***********/
 #search {
     background-color: rgba(245, 245, 245, 0.4);
     font-family: "jaf-bernino-sans","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
@@ -230,6 +186,75 @@ a, a:hover {
 
 
 
+/*****SHOW PAGE HEADER *****/
+.job-head{
+    background-color: #fff;
+}
+.page-header {
+    background: none repeat scroll 0 0 #fafafa;
+    border-bottom: 1px solid #ccc;
+    font: 38px "Varela Round",sans-serif;
+    padding: 20px 0;
+    text-align: center;
+}
+.page-title {
+    color: #797979;
+    font-size: 26px;
+    font-weight: normal;
+    
+}
+
+
+.page-subtitle {
+    color: #9a9b9e;
+    font: 14px "Montserrat",sans-serif;
+    margin-top: 0;
+}
+.page-subtitle ul {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+.page-subtitle li.job-type {
+    border-right: 0 none;
+    display: inline-block;
+    padding: 5px 10px;
+    text-align: center;
+}
+
+ li.job-type {
+    border-radius: 4px;
+    color: #fff;
+    font: bold 12px "Montserrat",sans-serif;
+    display: inline-block;
+}
+
+.full-time {
+    background-color: #01BE7E;
+
+}
+
+.part-time {
+    background-color: #f08d3c;
+}
+
+.temporary{
+    background-color: #FF0000;
+}
+
+.inter{
+   background-color: #0066FF;
+   
+}
+
+.page-subtitle li {
+    border-right: 1px solid #ccc;
+    display: inline-block;
+    padding: 0 20px 0 10px;
+}
+.page-subtitle li:last-child {
+    border-right: 0 none;
+}
 
 /******************************************/
 /**************JOB OVERVIEW****************/
@@ -284,8 +309,6 @@ a, a:hover {
     background-color: #fff;
     padding-bottom: 60px;
 }
-
-
 
 
 

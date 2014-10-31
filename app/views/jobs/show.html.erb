@@ -11,7 +11,7 @@
                 </div>
                 <h2 class="page-subtitle">
                     <ul>
-                        <li class="job-type full-time"><%=@job.views%></li>
+                        <%=render "layouts/jobtype" %>
                         <li class="job-company"><%=@job.company %></li>
                         <li class="job-location"><i class="fa fa-map-marker"></i>   <%= @job.location%></li>
                         <li class="job-date-posted"><i class="fa fa-calendar"></i>   Posted <%= time_ago_in_words(@job.created_at) %> ago</li>

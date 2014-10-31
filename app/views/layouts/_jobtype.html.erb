@@ -1,0 +1,9 @@
+<% if @job.views == 'Full Time'%>
+	 <li class="job-type full-time">Full Time</li>
+  <%elsif @job.views == 'Part Time'%>
+	 <li class="job-type part-time">Part Time</li>
+  <%elsif @job.views == 'Temporary'%>
+	 <li class="job-type temporary">Temporary</li>
+  <%else%>
+	 <li class="job-type inter">Paid Intership</li>
+<%end%>	
