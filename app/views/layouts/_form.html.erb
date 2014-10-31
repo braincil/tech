@@ -1,0 +1,36 @@
+<div class="container">
+	<% if @job.errors.any? %>
+	    <div id="error_explanation">
+	      <h2><%= pluralize(@job.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+	      <ul>
+		      <% @job.errors.full_messages.each do |msg| %>
+		        <li><%= msg %></li>
+		      <% end %>
+	      </ul>
+	   </div>
+	   <!-- end of error class -->
+	<% end %>
+	    
+	    <div class="row">
+	    	<div class="col-md-6 col-md-offset-3">	
+				<%=simple_form_for @job, html:{class: 'form-horizontal' ,multipart: true } do |f| %>
+	 			  
+					<%= f.input :title, label:"Job Title", input_html: {class: "form-control"} %>
+					<%= f.input :company, label:"Company Name",input_html: {class: "form-control"}%>
+					<%= f.input :location, label: "City" ,input_html: {class: "form-control"}%>
+					<%= f.input :body, label: "Description",input_html: {class: "form-control"}%>
+					<%= f.input :views, label: "Job Type", priority:["Full Time"], collection:["Full Time", "Part Time", "Temporary","Paid Intership"] ,input_html: {class: "form-control"} %>
+					<%= f.input :deleted, label: "Closing date", as: :string, input_html: {class: 'datepicker'}%>
+					<%= f.input :sticky, label: "Featured" %>
+					<%= f.file_field :image %>	
+					<br>
+					<%= f.button :submit %>
+
+			    <%end%>
+			</div>
+			<!-- End of colmd6-->
+		</div>
+		<!--./ row-->
+</div>
+<!-- end of container class -->

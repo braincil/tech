@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-	
+
 
 	def index
 		if params[:search]
@@ -62,7 +62,7 @@ class JobsController < ApplicationController
 
 private
 	def job_params
-		params.require(:job).permit(:title, :body, :company, :location, :sticky, :image)
+		params.require(:job).permit(:title, :body, :company, :location, :sticky, :image, :deleted,:views)
 	end
 
 end

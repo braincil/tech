@@ -26,7 +26,7 @@
     <!-- Post Feautured Job First -->
     <!-- POst the new jobs first after the featured -->
     <% @jobs.order('sticky DESC, created_at DESC').each do |job| %> 
-    <div class="col-sm-4 col-lg-3">
+    <div class="col-md-4 col-sm-4 col-lg-3">
       <article class="item tour">
         <!-- if the post is featured show the riboon-->
           <div>
@@ -36,8 +36,8 @@
           </div>
           <!--end of featured post DIV-->
           
-        <a class=" item-img pos-relative" style=""href="<%=job_path(job)%>">
-          <%= image_tag job.image.url(:medium) %>
+        <a class=" item-img pos-relative" href="<%=job_path(job)%>">
+        <%= image_tag job.image.url(:medium) %>
         </a>
         <!-- end of a tag(contains the image) -->
 
@@ -71,8 +71,9 @@
                <b>Location</b><br/><small><%= job.location%></small>
             </div>
             <!-- end of the cols-xs-6-->
+            
             <div class="col-xs-6 text-right">
-              <b>Added</b><br/><small><%= time_ago_in_words(job.created_at)%></small>
+              <b>Added</b><br/><small><%= time_ago_in_words(job.created_at)%> ago</small>
             </div>
             <!-- end of the cols-xs-6-->
           </div>
@@ -86,5 +87,7 @@
     <%end%>
   </div>
   <!--End of row class-->
-  <center><%= paginate @jobs%></center>
+  <center>   
+        <%= paginate @jobs%>
+  </center>
 </div>  

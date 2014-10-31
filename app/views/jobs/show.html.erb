@@ -1,27 +1,69 @@
-<div class="site-main" id="main">
-    <div class="content-area" id="primary"> 
-        <div class="page-header">
-            <h1 class="page-title"><%= @job.title %></h1>
-            <%= link_to "Edit", edit_job_path(@job) %>
-            <%= link_to "Delete", job_path(@job), method: :delete, data:{ confirm: "Are you sure"} %>
-            <h2 class="page-subtitle">
-                <ul>
-                    <li class="job-type full-time">Full Time</li>
-                    <li class="job-company"><%=@job.company %></li>
-                    <li class="job-location"><i class="icon-location"></i> <%= @job.location%></li>
-                    <li class="job-date-posted"><i class="icon-calendar"></i> Posted <%= time_ago_in_words(@job.created_at) %> ago</li>
-                </ul>
-            </h2>
+<div class="job-head row">    
+    <div class="site-main" id="main">
+        <div class="content-area" id="primary"> 
+            <div class="page-header">
+                <h1 class="page-title"><%= @job.title %></h1>
+                <div class="row">
+                  <span id="post-control">
+                     <%= link_to "Edit", edit_job_path(@job) %>
+                     <%= link_to "Delete", job_path(@job), method: :delete, data:{ confirm: "Are you sure"} %>
+                  </span>
+                </div>
+                <h2 class="page-subtitle">
+                    <ul>
+                        <li class="job-type full-time"><%=@job.views%></li>
+                        <li class="job-company"><%=@job.company %></li>
+                        <li class="job-location"><i class="fa fa-map-marker"></i>   <%= @job.location%></li>
+                        <li class="job-date-posted"><i class="fa fa-calendar"></i>   Posted <%= time_ago_in_words(@job.created_at) %> ago</li>
+                    </ul>
+                </h2>
+            </div>
         </div>
     </div>
+    <!-- end of site-main-->
 </div>
+<!-- end of row -->
 
-<div class="container">
-    <div class="container pull-left" >
+<div class="job-content row">
+<div id="content" class="container" role="main">
+  <article>
+    <div class="entry-content">
+        <div class="job-meta-top row">
+                <div class="col-md-8 col-sm-6 col-xs-12">
+                    <aside class="img-circle">
+                        <%= image_tag @job.image.url(:medium) %>
+                    </aside>
+                    <!--end of aside-->
+                 </div> 
+                 <!-- end of col 8 -->
+                 <div class="col-md-4 col-sm-6 col-xs-12">
+                    <aside>
+                       <%= render 'layouts/modal'%>
+                    </aside>
+                 </div>
+                 <!-- end of col 4-->
+        </div>
+        <!-- end of row-->  
         
-    </div> 
-    
-    <%=@job.body %>
-   
 
+        <div class="job-overview-content row">
+          <div class="container">
+            <div class="job-overview col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" > 
+              <p>  
+                <%=@job.body %>
+               </p>
+             </div>
+             <!--END of col12 --> 
+          </div>
+          <!-- ./container -->
+        </div>
+        <!-- END job overview raw -->   
+        <aside class="pull-right"><h4>Job valid until: <%=@job.deleted%></h4></aside>
+    </div>
+    <!-- end of entry-content-->   
+ </article>
+ <!-- end  of article -->
 </div>
+<!-- end of container class -->
+</div>
+<!-- ./row-->

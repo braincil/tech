@@ -1,13 +1,15 @@
 class Job < ActiveRecord::Base
+
   include PgSearch
-  pg_search_scope :search, against: [:title, :body, :location ], :order_within_rank => "jobs.sticky DESC ,jobs.updated_at DESC", using: {:tsearch => {dictionary: "english"}}
+  pg_search_scope :searchme, against: [:title, :body, :location ], :order_within_rank => "jobs.sticky DESC ,jobs.updated_at DESC", using: {:tsearch => {dictionary: "english"}}
+
 
 # It returns the articles whose titles contain one or more words that form the query
-  def search(query)
+  def self.search(query)
   	if query.present?
-  		search(query)
+  		searchme(query)
   	else
-  		render 'index'
+  		order("jobs.sticky DESC ,jobs.updated_at DESC")
   	end	
   end	
 
