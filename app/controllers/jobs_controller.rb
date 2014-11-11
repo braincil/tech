@@ -1,5 +1,7 @@
 class JobsController < ApplicationController
-
+before_filter :authenticate_user!, :except => [:index, :show]
+#Checking for the user ability
+load_and_authorize_resource param_method: :job_params
 
 	def index
 		if params[:search]
@@ -14,11 +16,14 @@ class JobsController < ApplicationController
 	end
 
 	def new		
-		@job = Job.new
+		#@job = Job.new
+		#create a new article by a user
+		@job = current_user.jobs.build
 	end
 
 	def create
-		@job = Job.new(job_params)
+		#@job = Job.new(job_params)
+		@job = current_user.jobs.build(job_params)
 		if @job.save
 			redirect_to root_path
 		else

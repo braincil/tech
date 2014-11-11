@@ -1,4 +1,5 @@
 class Job < ActiveRecord::Base
+  belongs_to :user
 
   include PgSearch
   pg_search_scope :searchme, against: [:title, :body, :location ], :order_within_rank => "jobs.sticky DESC ,jobs.updated_at DESC", using: {:tsearch => {dictionary: "english"}}

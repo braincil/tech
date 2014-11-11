@@ -20,8 +20,6 @@
   
     </header>
 
-
-
 <div class="container" style="responsive" >
   <div class="row">
     <!-- Post Feautured Job First -->
@@ -36,19 +34,18 @@
             <%end%>
           </div>
           <!--end of featured post DIV-->
-            <a class=" item-img pos-relative" href="<%=job_path(job)%>">
-              <div class="img-responsive" >
-                <%= image_tag job.image.url(:medium) %>
-             </div>
-            </a>
+            <div class=" item-img pos-relative" href="">
+              <img class="img-rounded media-object" src="<%= job.image.url(:medium) %> ">
+            </div>
            <!-- end of a tag(contains the image) -->
 
-        <div class="item-content">
+        <div class="item-content ">
           <h4>
             <b>
               <a href=""><%= link_to job.title, job_path(job) %></a>
+              
             </b>
-           
+            
             <!-- endof span class -->
             <p>
               <%=job.body%> 

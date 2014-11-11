@@ -30,13 +30,13 @@ padding-top: 5em;
 
 body {
   height: 100%;
-  background-color:  #170420;
- /* background: -webkit-linear-gradient(90deg, #136a8a 10%, #267871 90%); /* Chrome 10+, Saf5.1+ */
-  /*background:    -moz-linear-gradient(90deg, #136a8a 10%, #267871 90%); /* FF3.6+ */
- /* background:     -ms-linear-gradient(90deg, #136a8a 10%, #267871 90%); /* IE10 */
- /* background:      -o-linear-gradient(90deg, #136a8a 10%, #267871 90%); /* Opera 11.10+ */
- /* background:         linear-gradient(90deg, #136a8a 10%, #267871 90%); /* W3C */   
- /* color: #404040;*/
+
+  background: -webkit-linear-gradient(90deg, #DD5E89 10%, #F7BB97 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(90deg, #DD5E89 10%, #F7BB97 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(90deg, #DD5E89 10%, #F7BB97 90%); /* IE10 */
+  background:      -o-linear-gradient(90deg, #DD5E89 10%, #F7BB97 90%); /* Opera 11.10+ */
+  background:         linear-gradient(90deg, #DD5E89 10%, #F7BB97 90%); /* W3C */
+        
 }
 
 
@@ -375,5 +375,22 @@ footer .footer-menu a {
 
 
 
+
+
+/* CSS used here will be applied after bootstrap.css */
+.art-title{color:#231f20; font-size:20px; font-weight:700;}
+.job-data{width:100%; padding-bottom: 25px;}
+.job-pic{width:33%;position: relative;}
+.job-pic span a{color: #fff; font-size: 16px; display: none;}
+.job-prfle{width:63%; height:auto;}
+.job-prfle span.job-sub{font-size:15px; color:#bbb; float:left; width:100%; font-weight:normal; padding:5px 0;}
+.job-prfle span.job-sub span.byname{font-weight:700; color:#aaa;}
+.job-prfle span.job-sub span.daysago{float:right; font-size:12px;}
+.counter-tab{float: left; width: 100%; padding-top: 45px;}
+.counter-tab div{float: left; width: 33%; color: #aaa; font-size: 12px;}
+.bot-links{float: left; width: 100%; padding-top: 10px;}
+.bot-links a{display: inline-block; padding: 5px; background: #ccc; font-size: 12px; margin-bottom: 5px; color: #9c9c9c; text-decoration:none;}
+span.play-icon{position: absolute; left: 31%; top: 32%; display: none;}
+.job-pic:hover img.play-icon, .artst-pic:hover span a{display: block; } 
 
 
