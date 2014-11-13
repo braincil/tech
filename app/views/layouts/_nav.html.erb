@@ -1,7 +1,6 @@
 <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-custom navbar-fixed-top">
         <div class="container-fluid site-navigation">
-           
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -9,8 +8,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="<%=jobs_path%>">OCTOPUS</a>
+                </button>            
+                 <!--LOGO-->
+                     <div class="span3">
+                        <a class="brand" href="<%=jobs_path%>">
+                         <img src="/logo.png"/>
+                        </a>
+                    </div>
+                 <!-- /LOGO -->
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -25,15 +30,49 @@
                     <li>
                         <a href="contact.html">Contact</a>
                     </li>
+                
                     <% if current_user %>
-                        <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
-                    <% else %>
-                        <li><%= link_to 'Login', new_user_session_path %></li>
-                    <% end %>
-                </ul>
+                     <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                              <span class="glyphicon glyphicon-user"></span> 
+                              <strong><%= current_user.email %></strong>
+                              <span class="glyphicon glyphicon-chevron-down"></span>
+                            </a>
+                      <ul class="dropdown-menu">
+                         <li>
+                            <div class="navbar-login">
+                                <div class="row">       
+                                    <div class="col-lg-10">
+                                        <p class="text-left">
+                                           <i class="glyphicon glyphicon-cog"></i> <%= link_to 'Edit Account', edit_user_registration_path %>
+                                        </p>
+
+                                        <p class="text-left">
+
+                                           <i class="glyphicon glyphicon-off"> </i> <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>                      
+                    </ul>
+                </li>
+                <%else%>
+                   <li> <%=link_to "Login", new_user_session_path, class: 'navbar-link' %> </li>
+               <% end %>
+             </ul>
+             <!-- /.ul nav navbar-nav -->
             </div>
             <!-- /.navbar-collapse -->
+
         </div>
         <!-- /.container -->
 
     </nav>
+
+
+
+
+
+
+

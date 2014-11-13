@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-before_filter :authenticate_user!, :except => [:index, :show]
+before_filter :authenticate_user!, except: [:index, :show]
 #Checking for the user ability
 load_and_authorize_resource param_method: :job_params
 
@@ -59,13 +59,8 @@ load_and_authorize_resource param_method: :job_params
 	
 
 
-
-
-
-
-
-
 private
+
 	def job_params
 		params.require(:job).permit(:title, :body, :company, :location, :sticky, :image, :deleted,:views)
 	end

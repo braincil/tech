@@ -11,15 +11,14 @@
  <%=render 'layouts/nav'%>
 
 
-	<% flash.each do |key, value| %>
-      <div class="alert alert-<%= key %> alert-dismissable">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-        <%= value %>
-      </div>
-<% end %>
 
-<%= yield %>
+    <%= render 'layouts/messages' %>
 
- <%=render 'layouts/footer'%>
+    <%= yield %>
+
+    <%=render 'layouts/footer'%>
+
+ 
+
 </body>
 </html>

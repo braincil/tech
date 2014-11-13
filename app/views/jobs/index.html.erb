@@ -1,7 +1,10 @@
-  <!-- Page Header-->
+
+    
+<!-- Page Header-->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background: url('bg.jpg')">
-          <div class="container">
+       <div class="cover" style="background: url('bg.jpg')">
+        <div class="container" >
+
                 <div class="main-search clearfix">
                    <div class="form-group">
                        <%= form_tag jobs_path, method: :get, class:"navbar-from navbar-center", role:"search" do %>
@@ -15,72 +18,53 @@
                 <!--end of main search form -->
                 
                 <h1><%= link_to "Add a job", new_job_path %></h1>
-            </div>
-        <!-- end of container -->
-  
-    </header>
+
+          </div>
+           <!-- end of container -->    
+       </div>
+      <!-- end of coveer -->
+
+
+
 
 <div class="container" style="responsive" >
   <div class="row">
     <!-- Post Feautured Job First -->
     <!-- POst the new jobs first after the featured -->
     <% @jobs.order('sticky DESC, created_at DESC').each do |job| %> 
-    <div class="col-md-4 col-sm-4 col-lg-3 col-xs-12">
-      <article class="item tour">
-        <!-- if the post is featured show the riboon-->
-          <div>
-            <% if job.sticky? %>
-              <span class="ribbon" >Featured</span>
-            <%end%>
-          </div>
-          <!--end of featured post DIV-->
-            <div class=" item-img pos-relative" href="">
-              <img class="img-rounded media-object" src="<%= job.image.url(:medium) %> ">
-            </div>
-           <!-- end of a tag(contains the image) -->
-
-        <div class="item-content ">
-          <h4>
-            <b>
-              <a href=""><%= link_to job.title, job_path(job) %></a>
-              
-            </b>
-            
-            <!-- endof span class -->
-            <p>
-              <%=job.body%> 
-            </p>
-          </h4>
+    <div class="col-md-4 col-sm-6 col-lg-4 col-xs-12">
+         <div class="artist-data pull-left">
+                          <div class="artst-pic pull-left">
+                            <% if job.sticky? %>
+                               <span class="ribbon" >Featured</span>
+                             <%end%>
+                            
+                              <img src="<%= job.image.url(:medium) %>" class="img-responsive" />
+                            
+                          </div>
+                            <div class="artst-prfle pull-right">
+                              <div class="art-title">
+                                  <%= link_to job.title, job_path(job) %>
+                                    <span class="artst-sub"><span class="byname"><%=job.company %></span></span> 
+                                    <p>
+                                      <%=job.body %>
+                                    </p>
+                                </div>
+                              </div>
+                              <div class="item-footer">
+                                    <div class="col-xs-6 text-left" id="over">
+                                       <b>Location</b><br/><small><%= job.location%></small>
+                                    </div>
+                                    <!-- end of the cols-xs-6-->
+                                    
+                                    <div class="col-xs-6 text-right" id="over">
+                                      <b>Added</b><br/><small><%= time_ago_in_words(job.created_at)%> ago</small>
+                                    </div>
+                                    <!-- end of the cols-xs-6--> 
+                              </div>
+                              <!-- end of item-footer class-->
+                        
         </div>
-        <!-- end of item-content class-->
-        <div class="item-price" style="background:#FFF">
-          <div class="pull-left text-left" >
-            Company
-          </div>
-          <!--end of pull left class-->
-          <div class="pull-right text-right">
-            <%=job.company%>
-          </div>
-          <!--end of pull right class-->
-        </div>
-        <!--end of item price class-->
-        <div class="item-footer">
-          <div class="row">
-            <div class="col-xs-6 text-left">
-               <b>Location</b><br/><small><%= job.location%></small>
-            </div>
-            <!-- end of the cols-xs-6-->
-            
-            <div class="col-xs-6 text-right">
-              <b>Added</b><br/><small><%= time_ago_in_words(job.created_at)%> ago</small>
-            </div>
-            <!-- end of the cols-xs-6-->
-          </div>
-          <!-- end of row class -->
-        </div>
-        <!-- end of item-footer class-->
-      </article>
-      <!--End of article tag-->
     </div>
     <!-- end of the col-sm-4 class-->
     <%end%>

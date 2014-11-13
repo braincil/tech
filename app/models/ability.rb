@@ -7,7 +7,7 @@ class Ability
       if user.role.name == "Admin"
          can :manage, :all
       else
-         can [:read, :update], Job
+         can [:read, :create, :update], Job
       end
    end
 end
