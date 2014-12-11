@@ -12,82 +12,30 @@
  *
  *= require_tree .
  *= require_self
+ //= require foundation_and_overrides
  *= require font-awesome
- *= require bootstrap-datepicker3
  */
- @import "bootstrap-sprockets";
- @import "bootstrap";
 
+  body {
+    color: #555;
+    font-size: 0.875rem;
+  }
 
-
-
-.container {
-padding-top: 5em;
-
+ //headers
+ h1,h2,h3,h4,h5,h6 {
+  font-family: Cambria, Georgia, sans-serif !important;  
 }
-
-/****BODY BACKGROUND COLOR****/
-
-body {
-  height: 100%;
-
-  
-  background: -webkit-linear-gradient(90deg, #616161 10%, #9bc5c3 90%); /* Chrome 10+, Saf5.1+ */
-  background:    -moz-linear-gradient(90deg, #616161 10%, #9bc5c3 90%); /* FF3.6+ */
-  background:     -ms-linear-gradient(90deg, #616161 10%, #9bc5c3 90%); /* IE10 */
-  background:      -o-linear-gradient(90deg, #616161 10%, #9bc5c3 90%); /* Opera 11.10+ */
-  background:         linear-gradient(90deg, #616161 10%, #9bc5c3 90%); /* W3C */
-        
-        
-}
-
-
-
-/**************************************/
-/*************NAVIGATION**************/
-
-/*************HEADER**********/
-.intro-header {
-    padding-top: 20em;
-}
-
-.main-search {
-    padding-top: 10em;
-    padding-left: 8em;
+p {
+  font-family: Calibri, Helvetica, "Helvetica Neue", sans-serif !important;
+  font-size: 1.175em;
 }
 
 
 
 
-
-/****JOB LISTING CSS****/
-
-
-
-
-
-/******FEATURED RIBBON******/
-
-.ribbon {
-    border-radius: 5px 0;
-    display: inline-block;
-    left: 17px;
-    position: absolute;
-    top: 2px;
-    z-index: 99;
-    background-color: #FF3600;
-    border-radius: 5px;
-    color: #fff;
-    font-size: 12px;
-    font-weight: bold;
-    line-height: 16px;
-    padding: 5px 5px 5px;
-    text-align: center;
-    text-transform: uppercase;
-}
-
-/**********SEARCH BAR***********/
+//SEARCH BAR
 #search {
+    
     background-color: rgba(245, 245, 245, 0.4);
     font-family: "jaf-bernino-sans","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
     font-size: 28px;
@@ -95,144 +43,14 @@ body {
     font-weight: 45;
     height: 60px;
     letter-spacing: -0.02em;
-    padding: 0;
+    margin-top: 50px;
     
 }
 
-.form-group {
-    float: center;
-    width: 90%;
-    padding-right: 10px;
+.intro h2 {
+    font-family: "Lobster";
+    font-style: italic;
 }
-
-
-
-
-/*****SHOW PAGE HEADER *****/
-.job-head{
-    background-color: #fff;
-}
-.page-header {
-    background: none repeat scroll 0 0 #fafafa;
-    border-bottom: 1px solid #ccc;
-    font: 38px "Varela Round",sans-serif;
-    padding: 20px 0;
-    text-align: center;
-}
-.page-title {
-    color: #797979;
-    font-size: 26px;
-    font-weight: normal;
-    
-}
-
-
-.page-subtitle {
-    color: #9a9b9e;
-    font: 14px "Montserrat",sans-serif;
-    margin-top: 0;
-}
-.page-subtitle ul {
-    list-style: none outside none;
-    margin: 0;
-    padding: 0;
-}
-.page-subtitle li.job-type {
-    border-right: 0 none;
-    display: inline-block;
-    padding: 5px 10px;
-    text-align: center;
-}
-
- li.job-type {
-    border-radius: 4px;
-    color: #fff;
-    font: bold 12px "Montserrat",sans-serif;
-    display: inline-block;
-}
-
-.full-time {
-    background-color: #01BE7E;
-
-}
-
-.part-time {
-    background-color: #f08d3c;
-}
-
-.temporary{
-    background-color: #FF0000;
-}
-
-.inter{
-   background-color: #0066FF;
-   
-}
-
-.page-subtitle li {
-    border-right: 1px solid #ccc;
-    display: inline-block;
-    padding: 0 20px 0 10px;
-}
-.page-subtitle li:last-child {
-    border-right: 0 none;
-}
-
-/******************************************/
-/**************JOB OVERVIEW****************/
- aside {
- display: block;
-}
-
-.job-meta-top {
-    margin-bottom: 60px;
-    padding: 0 0 60px;
-     border-bottom: 1px solid #eee;
-}
-
-.button{
-    border-radius: 3px;
-    color: #fff;
-    display: inline-block;
-    text-decoration: none;
-    background: none repeat scroll 0 0 #01da90;
-    
-}
-#post-control {
-    font-size: 20px;
-}
-
-.application_button{
-    font: bold 15px "Montserrat",sans-serif;
-    padding: 15px 50px;
-    text-transform: uppercase;
-}
-
-.job-overview-content {
-    line-height: 27px;
-}
-
-.job-overview p{
-    font-family: Lora,"Times New Roman",serif;
-    font-size: 20px;
-    color: #404040;
-    text-justify: inter-word;
-
-}
-
-
-*::-moz-selection {
-    background: none repeat scroll 0 0 #0085a1;
-    color: #fff;
-    text-shadow: none;
-}
-
-.job-content{
-    background-color: #fff;
-    padding-bottom: 60px;
-}
-
-
 
 
 /*********************************/
@@ -242,7 +60,7 @@ body {
    
 }
 .col-lg-12 {
-    background-color: #232323;
+    background-color: #0E2634;   /*#232323*/
 }
 .footer-social {
     margin-bottom: 10px;
@@ -316,175 +134,16 @@ footer .footer-menu a {
 }
 
 
-
-
-
-
-/*INDEX PAGE ,HEADER AND IMAGE*/
-.cover{
-    color: rgb(255, 255, 255);
-    position: relative;
-    min-height: 350px;
-    background: no-repeat scroll 0px 100% / cover transparent;
-}
-
-/* 
-HEADER ROW STYLE
-===========================*/
-.navbar{
-    background: #f5f5f5;
-    border-bottom:1px solid #eee;
-    padding: 15px 0;
-}
-
-#header-row .navbar{margin:10px 0 0 0;}
-
-#header-row .navbar .navbar-inner{
-    border:none;
-    box-shadow: none;
-    margin: 0;
-    background: transparent;
-}
-
-#header-row .navbar .navbar-inner ul.nav > li > a{
-    box-shadow: none;
-    background: transparent;
-    color: #0088cc;
-}
-#header-row .navbar .navbar-inner ul.nav li.active a{
-    color: #333;
-}
-
-
-
-/*===========JOB LISTING ============*/
-
-
-.art-title{
-    color:#231f20; font-size:20px; font-weight:700;
-    height: 130px;
-    padding: 0 0 5px 0;
-    text-align: center;
-    overflow: hidden ;
-}
-
-.art-title p{
-    font-size: 15px;
-    font-style: justify;
-}
-
-.artist-data{
-    width:100%; 
-    background-color: rgb(255, 255, 255);
-    box-shadow: 0 0 5px rgba(51, 51, 51, 0.7);
-    margin: 0 0 20px;
-}
-
-.artst-pic{
-    length:auto;
-    width:36%;
-    position: relative;
-}
-
-.artst-pic span a{
-    color: #fff; 
- font-size: 16px; 
- display: none;
-}
-
-.artst-pic span.artst-like{
-    position: absolute; 
- left: 11%;
- bottom: 10px;
-}
-
-.artst-pic span.artst-share{
-    position: absolute;
- left:46%;
- bottom: 10px;
-}
-
-.artst-pic span.artst-plus{
-    position: absolute; 
-right: 9%;
- bottom: 10px;
-}
-
-.artst-prfle{
-
-    width:63%;
-}
-
-.artst-prfle span.artst-sub{
-    font-size:15px;
-    color:#bbb;
-    float:left;
-    width:100%;
-    font-weight:normal; 
-    padding:5px 0;
-}
-
-.artst-prfle span.artst-sub span.byname{
-    font-weight:700; 
-color:#aaa;
-}
-
-.artst-prfle span.artst-sub span.daysago{
-    float:right; 
-font-size:12px;
-}
-
-
-
-
-.item-footer {
-    background: none repeat scroll 0 0 #f6f6f6;
-    border-top: 1px solid #caced1;
-    font-size: 15px;
-    height: auto;
-    padding: 6px;
-    display: table;
-    list-style: outside none none;
-    margin: 10px 0 0;
-    padding: 0;
-    text-align: center;
-    width: 100%;
-}
-
-.artist-data:hover{
-    border-color: #38FEB1
-}
-
-.item-footer #over:hover {
-    background-color: rgb(200, 200, 200);
-    color: rgb(30, 30, 30);
-}
-
-
-
-/*==========COlograph of register========*/
-.colorgraph {
-  height: 5px;
-  border-top: 0;
-  background: #c4e17f;
-  border-radius: 5px;
-  background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-  background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-  background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-  background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-}
-
-.form-horizontal .form-group {
-    margin-left: 25px;
-}
-
-
-/*========REMEBER ME BUTTON========*/
-.btn-sm, .btn-group-sm > .btn {
-    margin-left: 30px;
-}
-
-
-.form-group.btu{
-     margin-right: 30px;
+//HEART
+.heart{
+  background-color: rgba(0, 0, 0, 0);
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: block;
+  height: 67px;
+  left: 50%;
+  margin-left: -38px;
+  margin-top: -35px;
+  position: absolute;
+  width: 71px;
 }

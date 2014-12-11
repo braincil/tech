@@ -1,78 +1,63 @@
 
-    
-<!-- Page Header-->
-    <!-- Set your background image for this header on the line below. -->
-       <div class="cover" style="background: url('bg.jpg')">
-        <div class="container" >
+<section class="intro">
+    <div class="row">
+      <div class=" medium-offset-1 medium-8 large-8 columns">
+       <h2 class="lead text-center mt2">A board for awesome people.</h2>
 
-                <div class="main-search clearfix">
-                   <div class="form-group">
-                       <%= form_tag jobs_path, method: :get, class:"navbar-from navbar-center", role:"search" do %>
-                        
-                        <%= text_field_tag :search, params[:search], class:"form-control", placeholder: "Enter a job title, a location, etc."%>
-                    </div>
-                    <!--- end of form-group class-->
-                      
-                    <% end %>     
-                </div>
-                <!--end of main search form -->
-                
-                <h1><%= link_to "Add a job", new_job_path %></h1>
+      <!-- start: Search -->
+      <%= form_tag jobs_path, method: :get, role:"search" do %>
+          <%= text_field_tag :search, params[:search], placeholder: "Enter a job title, a location, etc."%>
+          <span><%=submit_tag "Search", class: "button"%></span>
 
-          </div>
-           <!-- end of container -->    
-       </div>
-      <!-- end of coveer -->
+        <%end%>
+       <!-- END: Search -->     
+       </div> <!-- /.Coluimns-->
+    </div><!-- /.row -->
+  </section>
 
 
-
-
-<div class="container" style="responsive" >
+<div class="container" >
   <div class="row">
-    <!-- Post Feautured Job First -->
-    <!-- POst the new jobs first after the featured -->
-    <% @jobs.order('sticky DESC, created_at DESC').each do |job| %> 
-    <div class="col-md-4 col-sm-6 col-lg-4 col-xs-12">
-         <div class="artist-data pull-left">
-                          <div class="artst-pic pull-left">
-                            <% if job.sticky? %>
-                               <span class="ribbon" >Featured</span>
-                             <%end%>
-                            
-                              <img src="<%= job.image.url(:medium) %>" class="img-responsive" />
-                            
-                          </div>
-                            <div class="artst-prfle pull-right">
-                              <div class="art-title">
-                                  <%= link_to job.title, job_path(job) %>
-                                    <span class="artst-sub"><span class="byname"><%=job.company %></span></span> 
-                                    <p>
-                                      <%=job.body %>
-                                    </p>
-                                </div>
-                              </div>
-                              <div class="item-footer">
-                                    <div class="col-xs-6 text-left" id="over">
-                                       <b>Location</b><br/><small><%= job.location%></small>
-                                    </div>
-                                    <!-- end of the cols-xs-6-->
+  <!-- Post Feautured Job First -->
+   <!-- POst the new jobs first after the featured -->
+  <% @jobs.order('sticky DESC, created_at DESC').each do |job| %>
+        <!--start: Module -->
+        <div class="module">           
+          <ul class="medium-4 large-4 columns no-bullet ">
+           
+             <li class="glassy-bg">
+                <div class="logo left">
+                  <% if job.sticky? %>
+                     <!-- TODO: CSS RIBON --> 
+                  <%end%>
+                  <img src="<%= job.image.url(:medium) %>"/>
+                 </div>
+                 <h4 class="title text-center"><%= link_to job.title, job_path(job)%></h4>
+                 <h5 class="sub text-center"><%=job.company %></h5>
+          
+                <div class="module-footer">
+                  <div class="small-6 text-left columns" id="over">
+                    <b>Location</b><br/><em><%= job.location%></em>
+                  </div><!-- /. small-6 .columns-->
                                     
-                                    <div class="col-xs-6 text-right" id="over">
-                                      <b>Added</b><br/><small><%= time_ago_in_words(job.created_at)%> ago</small>
-                                    </div>
-                                    <!-- end of the cols-xs-6--> 
-                              </div>
-                              <!-- end of item-footer class-->
-                        
-        </div>
-    </div>
-    <!-- end of the col-sm-4 class-->
+                 <div class="small-6 text-right columns" id="over">
+                   <b>Added</b><br/><em><%= time_ago_in_words(job.created_at)%> ago</em>
+                 </div><!--/.small-6 .columns--> 
+
+                </div><!-- /.module-footer -->
+           </li> 
+          
+          </ul><!-- /. module-grid -->
+     
+        </div><!-- /.module -->
     <%end%>
-  </div>
-  <!--End of row class-->
-        
-  <center>   
-        <%= paginate @jobs%>
-  </center>
+  </div>  
 </div>
 <!-- end of container -->  
+
+    <%= paginate @jobs %>
+
+
+
+
+

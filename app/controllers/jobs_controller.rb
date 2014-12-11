@@ -7,12 +7,12 @@ load_and_authorize_resource param_method: :job_params
 		if params[:search]
 			@jobs = Job.search(params[:search]).page(params[:page]).per(12)
 		else
-	   		@jobs = Job.page(params[:page]).per(12)
+	   		@jobs = Job.page(params[:page]).per(24)
 		end
 	end	
 
 	def show
-		@job =Job.find(params[:id])
+		@job =Job.friendly.find(params[:id])
 	end
 
 	def new		
@@ -33,12 +33,13 @@ load_and_authorize_resource param_method: :job_params
 
 
 	def edit
-	  @job =Job.find(params[:id])
+	  @job =Job.friendly.find(params[:id])
 
 	end
+	
 
 	def update
-	  @job = Job.find(params[:id])
+	  @job = Job.friendly.find(params[:id])
 	 
 		 if @job.update(job_params)
 		 	redirect_to job_path(@job)
@@ -49,7 +50,7 @@ load_and_authorize_resource param_method: :job_params
 	end	
 
 	def destroy
-	  @job = Job.find(params[:id])
+	  @job = Job.friendly.find(params[:id])
 	  @job.destroy
 
 	  redirect_to root_path	
@@ -62,7 +63,7 @@ load_and_authorize_resource param_method: :job_params
 private
 
 	def job_params
-		params.require(:job).permit(:title, :body, :company, :location, :sticky, :image, :deleted,:views)
+		params.require(:job).permit(:title, :body, :company, :location, :sticky, :image, :deleted,:views,:url)
 	end
 
 end

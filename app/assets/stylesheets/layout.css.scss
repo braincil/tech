@@ -1,0 +1,102 @@
+
+.intro {
+    background-attachment: fixed;
+    background-color: #9a958f;
+    background-image: url(header-bg.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    height: 34.38rem;
+    padding-top: 3.125rem;
+    position: relative;
+}
+ 
+//navigation 
+.mathead {
+    background-color: #fff;
+    box-shadow: 0 4px #e8e8e8;
+    padding-top: 1.063rem;
+}
+.fixed {
+    z-index: 97;
+}
+.top-bar {
+    background-color: transparent;
+}
+.top-bar .name h1 {
+    font-family: Satisfy-Regular,Garamond,Baskerville,"Baskerville Old Face","Hoefler Text","Times New Roman",serif;
+    font-size: 1.625rem;
+}
+
+.top-bar .title-area {
+    margin-top: -15px;
+}
+.margin-top {
+    margin-top: 1.875rem;
+}
+.contact-wrapper {
+    color: #fff;
+}
+.copy {
+    background-color: #252525;
+    color: #979797;
+    padding: 30px;
+    text-align: center;
+}
+
+
+//title and subtitle
+.glassy-bg h3 h5 {
+    margin-bottom: 0;
+}
+
+
+//footer of the jobpost
+ .module-footer {
+    background: none repeat scroll 0 0;
+    background-color: rgba(10,110,145, 0.2);
+    border-top: 1px solid #caced1;
+    font-size: 15px;
+    height: auto;
+    padding: 6px;
+    display: table;
+    list-style: outside none none;
+    margin: 10px 0 0;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.module-footer #over:hover {
+    color: rgb(10,110,145);
+}
+
+
+//logo on the index page
+ .logo img {
+    margin-top: 10px;
+    margin-left: 10px; 
+    height: 60px;
+    width: 60px;
+ }
+
+
+
+//Devise login form
+
+.login-desc {
+    list-style: outside none none;
+    margin: 0.9375rem 0 0;
+    padding-left: 0;
+    text-align: center;
+}
+
+.login-desc li {
+    color: #fff;
+    display: inline-block;
+    font-size: 0.875rem;
+    line-height: 1;
+    margin-right: 5px;
+    padding: 0;
+}

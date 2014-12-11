@@ -11,16 +11,23 @@
 // about supported directives.
 //
 //= require jquery
-//= require bootstrap-sprockets
-//= require bootstrap-datepicker
 //= require jquery_ujs
-//= require turbolinks
+//= require 'greensock/TweenLite'
+//= require 'greensock/easing/EasePack'
+//= require foundation
 //= require_tree .
  
+$(function() {
 
- $(document).ready(function(){
-    $('.datepicker').datepicker();
-  });
+	$(document).foundation();
 
+	TweenMax.fromTo($('.heart img'), 0.45, {
+	    scale: 1
+	}, {
+	    repeatDelay: 0.5,
+	    scale: 1,
+	    repeat: -1,
+	    ease: Back.easeOut
+	});
 
- 
+});

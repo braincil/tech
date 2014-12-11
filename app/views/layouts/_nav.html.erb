@@ -1,78 +1,44 @@
-<!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-custom navbar-fixed-top">
-        <div class="container-fluid site-navigation">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>            
-                 <!--LOGO-->
-                     <div class="span3">
-                        <a class="brand" href="<%=jobs_path%>">
-                         <img src="/logo.png"/>
-                        </a>
-                    </div>
-                 <!-- /LOGO -->
-            </div>
+<header class="mathead fixed show-for-medium-up">
+    <div class="row">
+      <nav class="top-bar " data-topbar >
+      
+        <ul class="title-area">
+          <!-- Title Area -->
+          <li class="name">
+            <a href="<%=root_path%>">
+              <img src="/logo.png"/>
+            </a>
+          </li>
+          <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>  
+        </ul><!-- /.title-area -->
+        <!-- /.top-bar-section -->  
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="<%=jobs_path%>">Home</a>
-                    </li>
-                    <li>
-                        <a href="about.html">About</a>
-                    </li>
-                    <li>
-                        <a href="contact.html">Contact</a>
-                    </li>
-                
-                    <% if current_user %>
-                     <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                              <span class="glyphicon glyphicon-user"></span> 
-                              <strong><%= current_user.email %></strong>
-                              <span class="glyphicon glyphicon-chevron-down"></span>
-                            </a>
-                      <ul class="dropdown-menu">
-                         <li>
-                            <div class="navbar-login">
-                                <div class="row">       
-                                    <div class="col-lg-10">
-                                        <p class="text-left">
-                                           <i class="glyphicon glyphicon-cog"></i> <%= link_to 'Edit Account', edit_user_registration_path %>
-                                        </p>
+      <section class="top-bar-section">
+          <!-- Right Nav Section -->
+          <ul class="right">
+                <%=link_to  new_job_path do%>
+                  <h3 class= "button large">Post a Job</h3>
+                <%end%>  
 
-                                        <p class="text-left">
+                <% if current_user%>
+                  <li class="has-dropdown">
+                    <%= current_user.email%>
+                  
+                  <ul class="dropdown">
+                    <li><%= link_to 'Edit Account', edit_user_registration_path %> </li>
+                    <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+                  </ul> <!-- /.dropdown-->
 
-                                           <i class="glyphicon glyphicon-off"> </i> <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>                      
-                    </ul>
-                </li>
-                <%else%>
-                   <li> <%=link_to "Login", new_user_session_path, class: 'navbar-link' %> </li>
-               <% end %>
-             </ul>
-             <!-- /.ul nav navbar-nav -->
-            </div>
-            <!-- /.navbar-collapse -->
+                  <%else%>
 
-        </div>
-        <!-- /.container -->
+                  <li><%= link_to 'Login',new_user_session_path%></li>
+                <%end%>
+          </ul><!-- /.right --> 
 
-    </nav>
+      </section></nav><!-- /.top-bar -->
 
+    </div><!-- /.row -->
 
-
-
-
-
+  </header><!-- /. header -->
 

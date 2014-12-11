@@ -1,24 +1,55 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Board</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
- <%=render 'layouts/nav'%>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+
+    <%= google_webfonts_init({
+      google: ['lobster']
+      })%>
+  </head>
+
+  <body>
+    <div class="off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+        <nav class="tab-bar hide-for-medium-up">
+          <section class="left-small">
+             <a class="left-off-canvas-toggle menu-icon"><span></span></a>
+          </section>
+        </nav>
+
+        <section class="middle tab-bar-section hide-for-medium-up">
+          <a href="<%=root_path%>">
+              <img src="/logo.png"/>
+            </a>
+        </section>
+      
+      <aside class="left-off-canvas-menu hide-for-medium-up">
+          <ul class="off-canvas-list">
+            <li><a href="#">Home</a></li>
+            <li><%=link_to "Post a Job", new_job_path, class:"button large alert " %></li>
+          </ul>
+      </aside>
+      <a class="exit-off-canvas"></a>
+
+      <%= render 'layouts/nav'%>
+      <%= render 'layouts/alerts'%>
+        <%= yield %>
+     
+
+      <%= render 'layouts/footer'%> 
 
 
 
-    <%= render 'layouts/messages' %>
-
-    <%= yield %>
-
-    <%=render 'layouts/footer'%>
-
- 
-
-</body>
+     
+      </div> <!--/.inner-wrap-->
+    </div> <!-- /.off-canvas-wrap-->
+    <%= javascript_include_tag "application" %>
+  </body>
 </html>

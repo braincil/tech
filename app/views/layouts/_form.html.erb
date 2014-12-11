@@ -1,36 +1,108 @@
 <div class="container">
-	<% if @job.errors.any? %>
-	    <div id="error_explanation">
-	      <h2><%= pluralize(@job.errors.count, "error") %> prohibited this user from being saved:</h2>
+  <div class="row" style="margin-top:150px; margin-bottom:300px; ">
+    <div class="small-10 columns " >
+		<% if @job.errors.any? %>
+		    <div id="error_explanation">
+		      <h3><%= pluralize(@job.errors.count, "error") %> prohibited this Post from being saved:</h3>
 
-	      <ul>
-		      <% @job.errors.full_messages.each do |msg| %>
-		        <li><%= msg %></li>
-		      <% end %>
-	      </ul>
-	   </div>
-	   <!-- end of error class -->
-	<% end %>
-	    
-	    <div class="row">
-	    	<div class="col-md-6 col-md-offset-3">	
-				<%=simple_form_for @job, html:{class: 'form-horizontal' ,multipart: true } do |f| %>
-	 			  
-					<%= f.input :title, label:"Job Title", input_html: {class: "form-control"} %>
-					<%= f.input :company, label:"Company Name",input_html: {class: "form-control"}%>
-					<%= f.input :location, label: "City" ,input_html: {class: "form-control"}%>
-					<%= f.input :body, label: "Description",input_html: {class: "form-control"}%>
-					<%= f.input :views, label: "Job Type", priority:["Full Time"], collection:["Full Time", "Part Time", "Temporary","Paid Intership"] ,input_html: {class: "form-control"} %>
-					<%= f.input :deleted, label: "Closing date", as: :string, input_html: {class: 'datepicker'}%>
-					<%= f.input :sticky, label: "Featured" %>
-					<%= f.file_field :image %>	
-					<br>
-					<%= f.button :submit %>
-
-			    <%end%>
-			</div>
-			<!-- End of colmd6-->
+		      <ul>
+			      <% @job.errors.full_messages.each do |msg| %>
+			        <li><%= msg %></li>
+			      <% end %>
+		      </ul>
+		   </div>
+		   <!-- end of error class -->
+		<% end %>
+		    
+		    <%=form_for @job,multipart: true  do |f| %>
+	
+	<form>
+		<div class="row">
+			<div class="large-12 columns">
+			<label> Job Title </label>
+   				<%= f.text_field :title, help: "Must be at least 8 characters long" %>
+   			</div>	
 		</div>
-		<!--./ row-->
+
+		<div class="row">
+			<div class="large-12 columns">
+			<label> Company Name</label>
+   				<%= f.text_field :company%>
+   			</div>	
+		</div>
+
+		<div class="row">
+			<div class="large-12 columns">
+			<label>Location</label>
+   				 <%= f.text_field :location ,placeholder: '"Nicosia","Paphos","Limassol","Larnaca"'%>
+   			</div>	
+		</div>
+
+		<div class="row">
+			<div class="large-12 columns">
+			<label> Job Description</label>
+   			 <%= f.text_area :body, placeholder: "Description", rows: 10%>
+   			</div>	
+		</div>
+
+		<div class="row">
+			<div class=" medium-3 large-3 columns">
+			<label> Job Type </label>
+   				 <%=f.select(:views, options_for_select([["Full Time","Full Time"],["Part Time","Part Time"],["Temporary","Temporary"],["Paid Intership","Paid Intership"]]))%>
+   			</div>	
+		</div>
+
+		<div class="row">
+		  <div class="medium-6 columns">
+			<label> Apply via Email </label>
+			 	<%=f.text_field :url, placeholder: "Send to which email address?"%>
+		  </div>
+		</div>
+
+		<div class="row">
+			<div class="large-6 columns">
+			<label>Featured</label>
+   				 <%= f.check_box :sticky%> <%= f.label :sticky, label: "Featured" %>
+   			</div>	
+		</div>
+
+		<div class="row">
+			<div class="large-6 columns">
+			<fieldset>
+				<legend>Upload Logo</legend>
+				<%=f.file_field :image %>
+
+			</fieldset>
+			</div>
+		</div>
+
+
+
+		<div class="row">
+		<div class="large-4 columns">
+			<%= f.button :submit %>
+		</div>
+	</form> <!-- /.form -->
+
+<%end%>	
+		
+	</div>
+	<!--/.COLMN-->
+  </div>
+  <!--/.ROW-->	
 </div>
 <!-- end of container class -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+

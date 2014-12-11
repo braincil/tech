@@ -1,46 +1,29 @@
-<div class="container ">
-  <div class="row" style="margin-top:150px; margin-bottom:300px; ">
-    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3" >
-			<h2>Please Sign up</h2>
+<div class="small-centered radius-box medium-4 columns" style="margin-top:150px; margin-bottom:300px;">
 
-			<hr class="colorgraph">
+<h2>Sign up</h2>
 
-			<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'form-horizontal'}) do |f| %>
-			  <%= devise_error_messages! %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
 
-			 
-			<div class="form-group">
-			      <%= f.email_field :email, class: "form-control input-lg", placeholder:"Email Address" %>
-			</div>
+    <%= f.email_field :email, required: false, autofocus: true, placeholder:"Email Address" %>
+        
 
-			<div class="form-group"> 
-			      <%= f.password_field :password, autocomplete: "off", class: "form-control input-lg ", placeholder:"Password" %>
-			</div>
+    <div class="field">
+      <% if @validatable %>
+      <%= f.password_field :password, autocomplete: "off",placeholder: "Password" %>
+      <span>(<%= @minimum_password_length %> characters minimum)</span>
+      <% end %>
 
-			<div class="form-group">  
-			       <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control input-lg ", placeholder:"Confirm Password" %>
-			</div>
+    </div>
 
+    <div class="field">
+      <%= f.password_field :password_confirmation, autocomplete: "off",placeholder: "Confirm Password" %>
+    </div>
 
-			<hr class="colorgraph">
+    <div class="actions">
+      <%= f.submit "Sign up", class: "medium-12 columns button small alert block radius" %>
+    </div>
+  <% end %>
 
-			<div class="row">
-				<div class="col-xs-12 col-md-6 ">
-				    <div class="from-group">
-				        <%= f.submit "Register", class: "btn btn-primary btn-block btn-lg" %>
-				    </div>
-				</div>
-
-				
-				<div class="col-xs-12 col-md-6 ">
-				       <%= link_to "Sign in", new_session_path(resource_name),class:" btn btn-success btn-block btn-lg " %>
-				</div>
-			</div>
-			<!--/.ROW -->	
-			<% end %>
-   		</div>
-   		<!--/.COLOMN-->
-   	</div>
-   	<!--/.ROW-->
- </div>  		
-<!--./CONTAINER-->
+  <%= link_to "Log in", new_session_path(resource_name), class: "edium-12 columns button small  block radius" %>
+</div>
