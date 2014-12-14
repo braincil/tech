@@ -17,17 +17,20 @@
 //= require foundation
 //= require_tree .
  
-$(function() {
+$(document).ready(function() {
 
 	$(document).foundation();
 
-	TweenMax.fromTo($('.heart img'), 0.45, {
-	    scale: 1
-	}, {
-	    repeatDelay: 0.5,
-	    scale: 1,
-	    repeat: -1,
-	    ease: Back.easeOut
+
+    TweenMax.fromTo($(".heart img"), 0.45,
+	{
+		scale:1.4
+	},
+	{
+		repeatDelay: 0.5,
+		scale:1,
+		repeat:-1,
+		ease:Back.easeOut
 	});
 
 });

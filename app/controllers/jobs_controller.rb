@@ -6,7 +6,10 @@ load_and_authorize_resource param_method: :job_params
 	def index
 		if params[:search]
 			@jobs = Job.search(params[:search]).page(params[:page]).per(12)
-		else
+		elsif params[:category]
+			@category_id = Category.find_by(name: params[:category]).id
+			@jobs = Job.page.where(category_id: @category_id).per(24)
+	    else
 	   		@jobs = Job.page(params[:page]).per(24)
 		end
 	end	
@@ -63,7 +66,7 @@ load_and_authorize_resource param_method: :job_params
 private
 
 	def job_params
-		params.require(:job).permit(:title, :body, :company, :location, :sticky, :image, :deleted,:views,:url)
+		params.require(:job).permit(:title, :body, :company, :location, :sticky, :image, :deleted,:views,:url,:category_id)
 	end
 
 end

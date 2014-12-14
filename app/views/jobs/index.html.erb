@@ -11,10 +11,22 @@
 
         <%end%>
        <!-- END: Search -->     
-       </div> <!-- /.Coluimns-->
+       </div> <!-- /.Columns-->
     </div><!-- /.row -->
   </section>
-
+  
+  <!--Start: JOB Categories-->
+  <section>
+    <div class="row">
+      <dl class="sub-nav small-4 medium-8 columns" style="background-color:gold" >
+      <dt>Filter:</dt>
+       <%Category.all.each do |category| %> 
+      <dd><%= link_to category.name, jobs_path(category: category.name)%></dd>
+      <%end%>
+     </dl>
+    </div> 
+  </section>
+  <!-- END: JOB categories -->
 
 <div class="container" >
   <div class="row">

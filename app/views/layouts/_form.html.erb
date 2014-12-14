@@ -38,6 +38,14 @@
    			</div>	
 		</div>
 
+
+		<div class="row">
+			<div class="large-12 columns">
+				<label>Category</label>
+				  <%= f.collection_select :category_id, Category.all, :id,:name_desc%>		
+			</div>	
+		</div>
+
 		<div class="row">
 			<div class="large-12 columns">
 			<label> Job Description</label>

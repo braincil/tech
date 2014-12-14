@@ -1,5 +1,6 @@
 class Job < ActiveRecord::Base
   belongs_to :user
+  belongs_to :category
 
 
   include PgSearch
@@ -27,6 +28,7 @@ class Job < ActiveRecord::Base
   validates :company, presence: true, length:{maximum:15}
   validates :location, presence: true, length:{maximum:8}
   validates :url, presence: true
+  validates :category, presence: true
 
     def slug_candidates
         [[:id,:title]]
